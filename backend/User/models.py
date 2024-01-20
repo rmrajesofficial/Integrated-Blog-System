@@ -13,3 +13,21 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+
+class Blog(models.Model):
+    CATEGORY_CHOICES = [
+        ('Mental Health', 'Mental Health'),
+        ('Heart Disease', 'Heart Disease'),
+        ('Covid19', 'Covid19'),
+        ('Immunization', 'Immunization'),
+    ]
+    title = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='blogs/')
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+    summary = models.TextField()
+    content = models.TextField()
+    upload = models.BooleanField(default=False)
+    doctor = models.ForeignKey(CustomUser, on_delete=models.CASCADE,null=True,blank=True)
+
+    def __str__(self):
+        return self.title

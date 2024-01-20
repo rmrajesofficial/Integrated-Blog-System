@@ -1,11 +1,10 @@
 # customuser/serializers.py
 from rest_framework import serializers
-from User.models import CustomUser
+from User.models import CustomUser,Blog
 
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField(write_only=True)
-
     def validate(self, data):
         username = data.get('username', None)
         password = data.get('password', None)
@@ -26,4 +25,10 @@ class SignupSerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
+        fields = '__all__'
+
+class BlogExpandedSerializer(serializers.ModelSerializer):
+    doctor=UserSerializer()
+    class Meta:
+        model = Blog
         fields = '__all__'
