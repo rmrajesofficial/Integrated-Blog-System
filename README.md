@@ -15,15 +15,16 @@ Follow these instructions to set up and run the project on your local machine.
 - Python (3.6 or higher)
 - pip (package installer for Python)
 - Node.js and npm (or Yarn)
-
-- create Google Cloud Platform (GCP) account
-- enable Google Calendar API in GCP
-- create a service account
-- download Service account JSON key file with Calendar API access
-- give role/permissions like owner, editor, API admin etc
-- share your primary calender with your Service account with necessary permissions like (make changes and manage sharing)
-- save your json file in /backend/User
-- change the folowing lines (202,210) in views.py
+- 
+### Connect Google Calender
+- Create Google Cloud Platform (GCP) account
+- Enable Google Calendar API in GCP
+- Create a service account
+- Download Service account JSON key file with Calendar API access
+- Give role/permissions like owner, editor, API admin etc
+- Share your primary calender with your Service account with necessary permissions like (make changes and manage sharing)
+- Save your json file in /backend/User
+- Change the folowing lines (202,210) in views.py
 
 ### Installation-(Backend)
 
