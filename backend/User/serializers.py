@@ -1,6 +1,6 @@
 # customuser/serializers.py
 from rest_framework import serializers
-from User.models import CustomUser,Blog
+from User.models import *
 
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
@@ -32,3 +32,11 @@ class BlogExpandedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         fields = '__all__'
+
+class AppointmentSerializer(serializers.ModelSerializer):
+    doctor=UserSerializer()
+    patient=UserSerializer()
+    class Meta:
+        model=Appointment
+        fields='__all__'
+

@@ -8,6 +8,6 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = UserAdmin.fieldsets + (
         ('Custom Fields', {'fields': ('profile_picture', 'user_type', 'address')}),
     )
-
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Blog)
+admin.site.register(Appointment)
